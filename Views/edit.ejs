@@ -1,0 +1,45 @@
+<style>
+    body {
+        font-size: 150%;
+        margin: 20px 20px
+    }
+
+    .form-input {
+        margin: 10px 0
+    }
+</style>
+<form action="/employees/edit/<%=employee.eid %>" method="post">
+    <h1 class="title">Edit Employee</h1>
+
+    <div class="form-input">
+        <label>EID:</label>
+        <input disabled value=<%=employee.eid %>/>
+    </div>
+
+    <div class="form-input">
+        <label>Name:</label>
+        <input minlength="5" value=<%=employee.ename %> name="ename" />
+    </div>
+
+    <div class="form-input">
+        <label>Role:</label>
+        <select id="dropdown" name="role" >
+            <option value="Employee">Employee</option>
+            <option value="Manager">Manager</option>
+        </select>
+    </div>
+
+    <div class="form-input">
+        <label>Salary:</label>
+        <input min="1" type="number" value=<%=employee.salary %> name="salary" />
+    </div>
+
+    <div class="form-input">
+        <input type="submit" value="Submit" />
+    </div>
+</form>
+<a href="http://localhost:3000/">Home</a>
+<script>
+    //This is to make sure the select field has the default value of the employees role
+    document.getElementById('dropdown').value = "<%=employee.role %>";
+</script>

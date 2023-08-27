@@ -1,0 +1,33 @@
+<style>
+    body {
+        font-size: 150%;
+        margin: 20px 20px
+    }
+
+    .form-input {
+        margin: 10px 0
+    }
+</style>
+<form action="/employeesMongoDB/add" method="post">
+    <h1 class="title">Add Employee (MongoDB)</h1>
+
+    <div class="form-input">
+        <label>ID:</label>
+        <input required maxlength="4" minlength="4" name="_id"/>
+    </div>
+
+    <div class="form-input">
+        <label>phone:</label>
+        <input required minlength="6" name="phone" />
+    </div>
+
+    <div class="form-input">
+        <label>Email:</label>
+        <input required type="email" name="email" />
+    </div>
+
+    <div class="form-input">
+        <input required type="submit" value="Add" />
+    </div>
+</form>
+<a href="http://localhost:3000/">Home</a>
